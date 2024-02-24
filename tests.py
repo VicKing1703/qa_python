@@ -74,7 +74,7 @@ class TestBooksCollector:
         collector.add_book_in_favorites(name)
         assert name in collector.get_list_of_favorites_books()
 
-        # 8 удаление одной книги из избранного
+    # 8 удаление одной книги из избранного
     def test_delete_book_from_favorites_delete_one_book(self):
         collector = BooksCollector()
         name = 'Инквизитор Эйзенхорн'
@@ -99,8 +99,8 @@ class TestBooksCollector:
         collector.add_new_book('Девушка, которая взрывала воздушные замки')  # в названии 41 символ
         assert len(collector.get_books_genre()) == 0
 
-    # 11 добавить уже существующую книгу
-    def test_add_new_book_add_exist_book(self):
+    # 11 не добавляется уже существующая книга
+    def test_add_new_book_not_add_exist_book(self):
         collector = BooksCollector()
         collector.add_new_book('Просперо в огне')
         collector.add_new_book('Просперо в огне')
